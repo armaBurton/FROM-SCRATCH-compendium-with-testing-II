@@ -5,27 +5,31 @@ import style from './BurgerList.css';
 import { Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import BurgerArr from '../BurgerArr/BurgerArr';
-import BurgerArrFind from '../BurgerArrFind/BurgerArrFind';
+import BurgerArrFound from '../BurgerArrFound/BurgerArrFound';
 
 
 
 export default function BurgerList({burgers, bigArr}) {
 
+  console.log(burgers, bigArr);
   const [searchArr, setSearchArr] = useState([bigArr]);
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState('');
   const [found, setFound] = useState();
   const [local, setLocal] = useState([burgers])
 
-  console.log(bigArr);
+  // console.log(bigArr);
 
   function handleSubmit(){
     
     const find = bigArr.filter(item => item.name.toLowerCase().includes(search));
     
-    console.log('search',search);
-    console.log('find',find);
-    setLocal(find);
-    console.log('local', local);
+    // console.log('search',search);
+    // console.log('find',find);
+    // setLocal(find);
+    console.log(find);
+    // console.log('local', local);
+    setFound(find);
+    console.log(found);
   }
 
   function searchBurgers(e){
@@ -50,13 +54,14 @@ export default function BurgerList({burgers, bigArr}) {
       </div>
       <section className={style.dinnerTray}>
         <div className={style.burgerWrapper}>
-          {
-            <BurgerArr local={local} />
-          }
           {/* {
-            !find.length ? <BurgerArr burgers={burgers} /> :
-            <BurgerArrFind find={find} />
+            <BurgerArr local={local} />
           } */}
+          {/* {<BurgerArr burgers={burgers} />} */}
+          {
+            search === '' ? <BurgerArr burgers={burgers} /> :
+            <BurgerArrFound found={found} />
+          }
         </div>
       </section>
     </>

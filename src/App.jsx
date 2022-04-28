@@ -7,21 +7,19 @@ import burgerFetch from './services/burgerFetch';
 function App() {
 
   const [burgers, setBurgers] = useState([])
-  const [bigArr, setBigArr] = useState();
+  const [bigArr, setBigArr] = useState([]);
 
   useEffect(() => {
     async function getBurgers(){
-      const burgerList = await burgerFetch(bigArr);
+      const burgerList = await burgerFetch();
 
-      setBurgers(burgerList[0]);
-      setBigArr(burgerList[1]);
+      setBurgers(await burgerList[0]);
+      setBigArr(await burgerList[1]);
     }
     
     getBurgers();
   }, [])
   
-
-
   return (
     <>
       <Switch>

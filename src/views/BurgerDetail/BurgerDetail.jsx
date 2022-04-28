@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import style from './BurgerDetail.css';
 
-export default function BurgerDetail({burgers}) {
+export default function BurgerDetail({burgers, bigArr}) {
   const { id } = useParams();
 
   let profile = {};
