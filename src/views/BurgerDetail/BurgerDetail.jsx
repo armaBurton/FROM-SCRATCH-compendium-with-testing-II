@@ -3,7 +3,7 @@ import style from './BurgerDetail.css';
 
 export default function BurgerDetail({burgers}) {
   const { id } = useParams();
-  console.log(burgers);
+
   let profile = {};
 
   for (let b of burgers){

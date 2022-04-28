@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import style from './BurgerList.css';
 import { Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
+import BurgerArr from '../BurgerArr/BurgerArr';
+import BurgerArrFind from '../BurgerArrFind/BurgerArrFind';
 
 
 
@@ -12,18 +14,18 @@ export default function BurgerList({burgers, bigArr}) {
   const [searchArr, setSearchArr] = useState([bigArr]);
   const [search, setSearch] = useState();
   const [found, setFound] = useState();
+  const [local, setLocal] = useState([burgers])
 
   console.log(bigArr);
 
   function handleSubmit(){
-    console.log(typeof(search));
-    console.log(bigArr);
     
     const find = bigArr.filter(item => item.name.toLowerCase().includes(search));
     
-    console.log(find);
-    
-    <Redirect to={`/bobBurgers/:${find.id}`}/>
+    console.log('search',search);
+    console.log('find',find);
+    setLocal(find);
+    console.log('local', local);
   }
 
   function searchBurgers(e){
@@ -31,13 +33,15 @@ export default function BurgerList({burgers, bigArr}) {
     handleSubmit();
   }
 
-  console.log(burgers);
   return(
     <>
       <div className={style.headSpace}>
       <p className={style.title}>BurgerList</p>
       <div className={style.inputField}>
-        <input type="text" onChange={e => setSearch(e.target.value.toLowerCase())}/>
+        <input type="text" onChange={e => {
+            setSearch(e.target.value.toLowerCase());
+            searchBurgers(e);
+          }}/>
         <button className={style.submitButton} onClick={searchBurgers}>search</button>
       </div>
       {/* <form onSubmit={searchBurgers}>
@@ -46,9 +50,13 @@ export default function BurgerList({burgers, bigArr}) {
       </div>
       <section className={style.dinnerTray}>
         <div className={style.burgerWrapper}>
-        { 
-          burgers.map((burger, i) => <BurgerRender key={`${burger}${i}`} burger={burger}/>)
-        }
+          {
+            <BurgerArr local={local} />
+          }
+          {/* {
+            !find.length ? <BurgerArr burgers={burgers} /> :
+            <BurgerArrFind find={find} />
+          } */}
         </div>
       </section>
     </>
