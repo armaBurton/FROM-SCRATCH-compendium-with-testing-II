@@ -1,0 +1,44 @@
+.burgerCard{
+  width: 250px;
+  height: 350px;
+  background-color: yellow;
+  color:red;
+  /* padding: 10px; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.burgerCard:hover{
+  box-shadow: 0 0 15px darkgreen;
+}
+
+.name{
+  font-family: "Bob's Burgers 2";
+  color: yellow;
+  font-size: 1.75rem;
+  padding-bottom: 10px;
+  background-color: darkgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+}
+
+.image{
+  margin-top: 10px;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  display: flex;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+}

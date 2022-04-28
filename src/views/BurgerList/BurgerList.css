@@ -1,0 +1,48 @@
+
+.dinnerTray{
+  width: 900px;
+  height: 100vh;
+  background-color: lightgreen;
+  padding: 30px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.burgerWrapper{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.submitButton{
+  margin-left: 10px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.title{
+  font-size: 5rem;
+  font-family: "Bob's Burgers 2";
+  color: darkgreen;
+  width: 840px;
+  height: 92px;
+  text-align: center;
+}
+
+.headSpace{
+  width: 100%;
+  background-color: yellowgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px
+}
+
+.loading{
+  font-size: 3rem;
+  font-family: "Bob's Burgers 2";
+}
