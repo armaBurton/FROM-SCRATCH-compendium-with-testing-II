@@ -1,28 +1,27 @@
-// import BurgerRender from '../BurgerRender/BurgerRender'
+import BurgerRender from '../BurgerRender/BurgerRender'
 import burgerFetch from '../../services/burgerFetch';
 import { useEffect } from 'react';
+import style from './BurgerList.css';
 
-export default function BurgerList() {
-  // const testArr = [ 1, 2, 3 ];
-  let bobsArr = [];
+export default function BurgerList({burgers}) {
 
-  useEffect(() => {
-    async function getBurgers(){
-      bobsArr = await burgerFetch();
-    }
-
-    getBurgers();
-  }, [])
-
-  console.log(bobsArr);
-
+  console.log(burgers);
   return(
     <>
-      <p>BurgerList</p>
-      {/* { 
-        testArr.map((test, i) => <BurgerRender key={`${test}${i}`} test={test}/>)
-      } */}
-      <p>hotdogs</p>
+      <div className={style.headSpace}>
+      <p className={style.title}>BurgerList</p>
+      <form action="submit">
+        <input type="text" />
+        <button className={style.submitButton} type='submit'>search</button>
+      </form>
+      </div>
+      <section className={style.dinnerTray}>
+        <div className={style.burgerWrapper}>
+        { 
+          burgers.map((burger, i) => <BurgerRender key={`${burger}${i}`} burger={burger}/>)
+        }
+        </div>
+      </section>
     </>
   )
 }
