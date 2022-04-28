@@ -10,9 +10,6 @@ export default function BurgerArrFound({found}) {
     console.log('burgers', burgers);
   }, [found])
 
-
-  // setBurger(found);
-
   return (
     <>
       { 

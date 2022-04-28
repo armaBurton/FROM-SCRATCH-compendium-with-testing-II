@@ -3,7 +3,6 @@ import BurgerRender from '../BurgerRender/BurgerRender';
 export default function BurgerArr({burgers}) {
   console.log(burgers);
 
-  // return <></>;
   return (
     <>
       { 
