@@ -3,11 +3,9 @@ import { useState, useEffect } from 'react';
 
 export default function BurgerArrFound({found}) {
   const [burgers, setBurgers] = useState(found);
-  console.log('found', found);
 
   useEffect(() => { 
     setBurgers(found);
-    console.log('burgers', burgers);
   }, [found])
 
   return (

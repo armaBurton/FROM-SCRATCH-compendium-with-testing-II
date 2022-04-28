@@ -1,7 +1,5 @@
 const burgerFetch = async () => {
 
-    console.log('burgerFetch');
-
     const burgerArr = [];
     const bothArrays = [];
     const burgers = await fetch('https://bobsburgers-api.herokuapp.com/characters');

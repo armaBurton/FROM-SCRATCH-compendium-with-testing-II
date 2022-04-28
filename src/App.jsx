@@ -8,6 +8,7 @@ function App() {
 
   const [burgers, setBurgers] = useState([])
   const [bigArr, setBigArr] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getBurgers(){
@@ -15,6 +16,7 @@ function App() {
 
       setBurgers(await burgerList[0]);
       setBigArr(await burgerList[1]);
+      setLoading(false);
     }
     
     getBurgers();
@@ -27,7 +29,7 @@ function App() {
           <BurgerDetail burgers={burgers} bigArr={bigArr}/>
         </Route>
         <Route path='/bobsBurgers'>
-          <BurgerList burgers={burgers} bigArr={bigArr}/>
+          <BurgerList burgers={burgers} bigArr={bigArr} loading={loading}/>
         </Route>
         <Route path='/'>
           <p>Home</p>

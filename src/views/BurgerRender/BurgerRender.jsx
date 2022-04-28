@@ -1,11 +1,11 @@
 import style from './BurgerRender.css';
 import { Link } from 'react-router-dom';
 
-export default function BurgerRender({burger}) {
+export default function BurgerRender({burger, i}) {
 
   return(
     <Link to={`/bobsBurgers/${burger.id}`}>
-      <section className={style.burgerCard}>
+      <section className={style.burgerCard} data-testid={i}>
         <p className={style.name}>{burger.name}</p>
         <img className={style.image} src={burger.image} alt={burger.name}/>
       </section>

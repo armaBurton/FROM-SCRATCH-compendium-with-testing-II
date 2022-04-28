@@ -1,6 +1,7 @@
 
 .dinnerTray{
   width: 900px;
+  height: 100vh;
   background-color: lightgreen;
   padding: 30px;
   display: flex;
@@ -27,6 +28,9 @@
   font-size: 5rem;
   font-family: "Bob's Burgers 2";
   color: darkgreen;
+  width: 840px;
+  height: 92px;
+  text-align: center;
 }
 
 .headSpace{
@@ -36,4 +40,9 @@
   flex-direction: column;
   align-items: center;
   padding: 20px
+}
+
+.loading{
+  font-size: 3rem;
+  font-family: "Bob's Burgers 2";
 }
