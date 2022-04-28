@@ -9,16 +9,25 @@
   left: 0;
 }
 
-.detailCard h1{
+.info{
+  width: 100%;
+  display: flex;
+  background-color: darkgreen;
+  padding: 20px;
+  align-items: center;
+}
+
+.name{
   font-family: "Bob's Burgers 2";
   font-size: 3rem;
-  color: darkgreen;
+  color: yellow;
+  width: 100%;
 }
 
 .stats{
   margin-top: 10px;
   pointer-events: none;
-  color: darkgreen;
+  color: yellow;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -27,8 +36,7 @@
 .detailCard{  
   width: 650px;
   height: 100%;
-  background-color: lightgreen;
-  padding: 50px;
+  background-color: yellow;
   display: flex;
   flex-direction: column;
 }
